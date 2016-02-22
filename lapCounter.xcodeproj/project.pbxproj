@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA75EAC31C7A77C700CBAE23 /* RunSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA75EAC21C7A77C700CBAE23 /* RunSession.swift */; settings = {ASSET_TAGS = (); }; };
 		CA7B10231C7911AF0048281E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B10221C7911AF0048281E /* AppDelegate.swift */; };
 		CA7B10251C7911AF0048281E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B10241C7911AF0048281E /* ViewController.swift */; };
 		CA7B10281C7911AF0048281E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7B10261C7911AF0048281E /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 		CA7B10301C7911AF0048281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7B102E1C7911AF0048281E /* LaunchScreen.storyboard */; };
 		CA7B103B1C7911AF0048281E /* lapCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B103A1C7911AF0048281E /* lapCounterTests.swift */; };
 		CA7B10461C7911AF0048281E /* lapCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B10451C7911AF0048281E /* lapCounterUITests.swift */; };
+		CA7B10541C7911FA0048281E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7B10531C7911FA0048281E /* libz.tbd */; };
+		CA9074BA1C7A300700EF4801 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9074B91C7A300700EF4801 /* Gimbal.framework */; settings = {ASSET_TAGS = (); }; };
+		CA9074BF1C7A32E600EF4801 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9074BE1C7A32E600EF4801 /* StopWatchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA75EAC21C7A77C700CBAE23 /* RunSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunSession.swift; path = ../RunSession.swift; sourceTree = "<group>"; };
 		CA7B101F1C7911AF0048281E /* lapCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lapCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7B10221C7911AF0048281E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA7B10241C7911AF0048281E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,10 @@
 		CA7B10411C7911AF0048281E /* lapCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lapCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7B10451C7911AF0048281E /* lapCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lapCounterUITests.swift; sourceTree = "<group>"; };
 		CA7B10471C7911AF0048281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7B10531C7911FA0048281E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CA9074B91C7A300700EF4801 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
+		CA9074BE1C7A32E600EF4801 /* StopWatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
+		CA9074C01C7A393400EF4801 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = /Users/Yucheng/Dev/iOS/lapCounter/Header.h; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9074BA1C7A300700EF4801 /* Gimbal.framework in Frameworks */,
+				CA7B10541C7911FA0048281E /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +90,8 @@
 		CA7B10161C7911AF0048281E = {
 			isa = PBXGroup;
 			children = (
+				CA7B10531C7911FA0048281E /* libz.tbd */,
+				CA9074B91C7A300700EF4801 /* Gimbal.framework */,
 				CA7B10211C7911AF0048281E /* lapCounter */,
 				CA7B10391C7911AF0048281E /* lapCounterTests */,
 				CA7B10441C7911AF0048281E /* lapCounterUITests */,
@@ -100,8 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				CA7B10221C7911AF0048281E /* AppDelegate.swift */,
+				CA75EAC21C7A77C700CBAE23 /* RunSession.swift */,
 				CA7B10241C7911AF0048281E /* ViewController.swift */,
+				CA9074C01C7A393400EF4801 /* Header.h */,
 				CA7B10261C7911AF0048281E /* Main.storyboard */,
+				CA9074BE1C7A32E600EF4801 /* StopWatchViewController.swift */,
 				CA7B102C1C7911AF0048281E /* Assets.xcassets */,
 				CA7B102E1C7911AF0048281E /* LaunchScreen.storyboard */,
 				CA7B10311C7911AF0048281E /* Info.plist */,
@@ -258,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9074BF1C7A32E600EF4801 /* StopWatchViewController.swift in Sources */,
 				CA7B102B1C7911AF0048281E /* lapCounter.xcdatamodeld in Sources */,
+				CA75EAC31C7A77C700CBAE23 /* RunSession.swift in Sources */,
 				CA7B10251C7911AF0048281E /* ViewController.swift in Sources */,
 				CA7B10231C7911AF0048281E /* AppDelegate.swift in Sources */,
 			);
@@ -402,10 +420,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = lapCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.yuchengl.lapCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = lapCounter/Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -413,10 +440,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = lapCounter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.yuchengl.lapCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = lapCounter/Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -487,6 +523,7 @@
 				CA7B104C1C7911AF0048281E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA7B104D1C7911AF0048281E /* Build configuration list for PBXNativeTarget "lapCounterTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +532,7 @@
 				CA7B104F1C7911AF0048281E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA7B10501C7911AF0048281E /* Build configuration list for PBXNativeTarget "lapCounterUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +541,7 @@
 				CA7B10521C7911AF0048281E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -20,6 +20,34 @@
                ReferencedContainer = "container:lapCounter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA7B10351C7911AF0048281E"
+               BuildableName = "lapCounterTests.xctest"
+               BlueprintName = "lapCounterTests"
+               ReferencedContainer = "container:lapCounter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA7B10401C7911AF0048281E"
+               BuildableName = "lapCounterUITests.xctest"
+               BlueprintName = "lapCounterUITests"
+               ReferencedContainer = "container:lapCounter.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,26 +56,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA7B10351C7911AF0048281E"
-               BuildableName = "lapCounterTests.xctest"
-               BlueprintName = "lapCounterTests"
-               ReferencedContainer = "container:lapCounter.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA7B10401C7911AF0048281E"
-               BuildableName = "lapCounterUITests.xctest"
-               BlueprintName = "lapCounterUITests"
-               ReferencedContainer = "container:lapCounter.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

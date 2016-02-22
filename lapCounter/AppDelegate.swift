@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Gimbal.setAPIKey("ff40d961-77a1-4129-ab85-20512d5df333", options: nil);
         return true
     }
 
