@@ -20,11 +20,13 @@ class StopWatchViewController: UIViewController, GMBLPlaceManagerDelegate, UITab
     var lapSeconds: Int = 0;
     var lapFractions: Int = 0;
     
+    @IBOutlet weak var debugLabel: UILabel!
     var start:Bool = true;
     var lapFlag:Bool = false;
     var laps = [String]();
    
     @IBOutlet weak var StartButton: UIButton!
+    @IBOutlet weak var lapTable: UITableView!
     
     @IBOutlet weak var timerFractionLabel: UILabel!
     @IBOutlet weak var timerSecondsLabel: UILabel!
@@ -49,28 +51,28 @@ class StopWatchViewController: UIViewController, GMBLPlaceManagerDelegate, UITab
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func StartRun(sender: AnyObject) {
-        if(!GMBLPlaceManager.isMonitoring()){
+    @IBAction func StartRun(sender: AnyObject){
+        if (!GMBLPlaceManager.isMonitoring()){
             GMBLPlaceManager.startMonitoring();
+            print("Start Monitoring");
         }
-        
-        else{
-            GMBLPlaceManager.stopMonitoring();
-        }
-        
         startStopTimer();
     }
     
     func placeManager(manager: GMBLPlaceManager, didBeginVisit visit: GMBLVisit){
-        print("here");
-        if(lapFlag){
+        debugLabel.text = "Arrival";
+        print("Arrive");
+        if(lapFlag == true){
+            debugLabel.text = "Arrival - wtf";
             registerLap();
+            lapFlag = false;
         }
     }
     
     func placeManager(manager: GMBLPlaceManager, didEndVisit visit: GMBLVisit){
-        print("Exits");
-        if (!lapFlag){
+        debugLabel.text = "Depart";
+        print("depart");
+        if (lapFlag == false){
             lapFlag = true;
         }
         
@@ -79,7 +81,7 @@ class StopWatchViewController: UIViewController, GMBLPlaceManagerDelegate, UITab
     func startStopTimer(){
         if(start == true){
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true);
-            lapTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: ("updateLap"), userInfo: nil, repeats: true);
+            lapTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateLap"), userInfo: nil, repeats: true);
             
             start = !start;
             StartButton.setTitle("Pause", forState: UIControlState.Normal);
@@ -95,20 +97,17 @@ class StopWatchViewController: UIViewController, GMBLPlaceManagerDelegate, UITab
     }
     
     func registerLap(){
-        if (lapFlag){
-            // Reset Lap
-            lapFractions = 0;
-            lapSeconds = 0;
-            lapMinutes = 0;
+        // Reset Lap
+        lapFractions = 0;
+        lapSeconds = 0;
+        lapMinutes = 0;
             
-            let lapString = "\(lapMinutesLabel.text):\(lapSecondsLabel.text).\(lapFractionLabel.text)"
-            laps.insert(lapString, atIndex: 0);
-            lapFractionLabel.text = "00";
-            lapSecondsLabel.text = "00";
-            lapMinutesLabel.text = "00";
-            lapTimer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: ("updateLap"), userInfo: nil, repeats: true);
-            lapFlag = false;
-        }
+        let lapString = "\(lapMinutesLabel.text!):\(lapSecondsLabel.text!).\(lapFractionLabel.text!)"
+        laps.insert(lapString, atIndex: 0);
+        lapTable.reloadData();
+        lapFractionLabel.text = "00";
+        lapSecondsLabel.text = "00";
+        lapMinutesLabel.text = "00";
     }
     
     func updateTimer(){
@@ -153,7 +152,18 @@ class StopWatchViewController: UIViewController, GMBLPlaceManagerDelegate, UITab
         lapMinutesLabel.text = minutesString;
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return laps.count;
+    }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.lapTable.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath);
+        
+        cell.textLabel!.text = "Lap \(self.laps.count - indexPath.row)";
+        cell.detailTextLabel!.text = laps[indexPath.row];
+        
+        return cell;
+    }
 
     /*
     // MARK: - Navigation

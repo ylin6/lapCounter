@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA75EAC31C7A77C700CBAE23 /* RunSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA75EAC21C7A77C700CBAE23 /* RunSession.swift */; settings = {ASSET_TAGS = (); }; };
+		CA75EAC31C7A77C700CBAE23 /* RunSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA75EAC21C7A77C700CBAE23 /* RunSession.swift */; };
 		CA7B10231C7911AF0048281E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B10221C7911AF0048281E /* AppDelegate.swift */; };
 		CA7B10251C7911AF0048281E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B10241C7911AF0048281E /* ViewController.swift */; };
 		CA7B10281C7911AF0048281E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7B10261C7911AF0048281E /* Main.storyboard */; };
@@ -17,8 +17,8 @@
 		CA7B103B1C7911AF0048281E /* lapCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B103A1C7911AF0048281E /* lapCounterTests.swift */; };
 		CA7B10461C7911AF0048281E /* lapCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B10451C7911AF0048281E /* lapCounterUITests.swift */; };
 		CA7B10541C7911FA0048281E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7B10531C7911FA0048281E /* libz.tbd */; };
-		CA9074BA1C7A300700EF4801 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9074B91C7A300700EF4801 /* Gimbal.framework */; settings = {ASSET_TAGS = (); }; };
-		CA9074BF1C7A32E600EF4801 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9074BE1C7A32E600EF4801 /* StopWatchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		CA9074BA1C7A300700EF4801 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9074B91C7A300700EF4801 /* Gimbal.framework */; };
+		CA9074BF1C7A32E600EF4801 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9074BE1C7A32E600EF4801 /* StopWatchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA4255621C7ABDF600905C5C /* lapCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = lapCounter.entitlements; sourceTree = "<group>"; };
 		CA75EAC21C7A77C700CBAE23 /* RunSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunSession.swift; path = ../RunSession.swift; sourceTree = "<group>"; };
 		CA7B101F1C7911AF0048281E /* lapCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lapCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7B10221C7911AF0048281E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		CA7B10211C7911AF0048281E /* lapCounter */ = {
 			isa = PBXGroup;
 			children = (
+				CA4255621C7ABDF600905C5C /* lapCounter.entitlements */,
 				CA7B10221C7911AF0048281E /* AppDelegate.swift */,
 				CA75EAC21C7A77C700CBAE23 /* RunSession.swift */,
 				CA7B10241C7911AF0048281E /* ViewController.swift */,
@@ -211,6 +213,15 @@
 				TargetAttributes = {
 					CA7B101E1C7911AF0048281E = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = KVS4Y7QHGK;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					CA7B10351C7911AF0048281E = {
 						CreatedOnToolsVersion = 7.0;
@@ -420,6 +431,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.yuchengl.lapCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = lapCounter/Header.h;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -440,6 +454,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = in.yuchengl.lapCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = lapCounter/Header.h;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
